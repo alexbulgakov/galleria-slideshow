@@ -1,3 +1,31 @@
 .header {
-  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5rem 0;
+  border-bottom: 0.0625rem solid #e5e5e5;
+}
+
+.startSlideshow {
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.16069rem;
+}
+
+@media screen and (max-width: 480px) {
+  .header {
+    padding: 1.5rem 0;
+  }
+
+  .logo {
+    max-width: 7rem;
+  }
+
+  .startSlideshow {
+    font-size: 0.5625rem;
+    letter-spacing: 0.12056rem;
+  }
 }
