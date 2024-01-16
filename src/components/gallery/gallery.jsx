@@ -25,12 +25,13 @@ function Gallery({ paintings }) {
 
   return (
     <main className={styles.gallery}>
-      {columns.map((col, colIndex) => (
+      {columns.map((column, colIndex) => (
         <div className={styles.column} key={colIndex}>
           {paintings.map(
             (painting, index) =>
-              col.includes(painting.name) && (
+              column.includes(painting.name) && (
                 <div className={styles.painting} key={index}>
+                  <div className={styles.background}></div>
                   <img
                     src={painting.images.thumbnail}
                     className={styles.img}
@@ -38,6 +39,7 @@ function Gallery({ paintings }) {
                   />
                   <h2 className={styles.name}>{painting.name}</h2>
                   <p className={styles.artist}>{painting.artist.name}</p>
+                  <div className={styles.backgroundHover}></div>
                 </div>
               ),
           )}
