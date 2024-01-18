@@ -1,13 +1,54 @@
-.image {
-  max-height: 35rem;
+.painting {
+  display: grid;
+  /* grid-template-columns: 51rem auto; */
+  grid-template-columns: 51rem 31rem;
+  grid-gap: 1.81rem;
+  /* max-width: 85rem; */
 }
 
-.description {
+.images {
+  position: relative;
+}
+
+.image {
+  max-height: 35rem;
+  margin-bottom: 4rem;
+}
+
+.nameAndArtist {
+  background: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 25rem;
+  padding-left: 4.06rem;
+  padding-bottom: 4.19rem;
+}
+
+.name {
+  max-width: 18rem;
+}
+
+.artist {
+  margin-top: 1.5rem;
   color: #7d7d7d;
-  font-size: 0.875rem;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 1.75rem;
+}
+
+.artistPhoto {
+  margin-left: 1.87rem;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* width: fit-content; */
+}
+
+.history {
+  position: relative;
+  align-self: flex-end;
 }
 
 .year {
@@ -16,16 +57,29 @@
   font-style: normal;
   font-weight: 700;
   line-height: 9.375rem;
-}
-
-.painting {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 10px;
-}
-
-.images {
+  position: relative;
+  z-index: 1;
 }
 
 .description {
+  color: #7d7d7d;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.75rem;
+  max-width: 21.9rem;
+  position: absolute;
+  z-index: 2;
+  top: 7rem;
+  left: 0;
+}
+
+.link {
+  margin-bottom: 3.31rem;
+}
+
+@media screen and (max-width: 56rem) {
+  .painting {
+    grid-template-columns: 1fr;
+  }
 }

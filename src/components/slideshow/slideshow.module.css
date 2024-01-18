@@ -1,38 +1,8 @@
 .slide {
+  margin-top: 6.25rem;
+  /* max-height: 39rem; */
 }
 
 .container {
   position: absolute;
-}
-
-.next,
-.prev {
-  top: calc(50% - 20px);
-  position: absolute;
-  background: white;
-  border-radius: 30px;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  user-select: none;
-  cursor: pointer;
-  font-weight: bold;
-  font-size: 18px;
-  z-index: 2;
-}
-
-.next {
-  right: -50px;
-}
-
-.prev {
-  left: -50px;
-  transform: scale(-1);
-}
-
-p,
-h2 {
-  color: azure;
 }

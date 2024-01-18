@@ -12,7 +12,13 @@ body {
     serif;
   font-size: 1rem;
   -webkit-text-size-adjust: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 h1 {
