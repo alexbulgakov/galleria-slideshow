@@ -1,12 +1,24 @@
 import styles from './header.module.css';
 
-function Header() {
+function Header({ toggleSlideshowVisibility, slideshowVisibility }) {
   return (
     <header className={styles.header}>
       <img src="src/assets/logo.svg" className={styles.logo} alt="logo" />
-      <a className={styles.startSlideshow} href="#">
-        START SLIDESHOW
-      </a>
+      {slideshowVisibility ? (
+        <button
+          onClick={toggleSlideshowVisibility}
+          className={styles.startSlideshow}
+        >
+          STOP SLIDESHOW
+        </button>
+      ) : (
+        <button
+          onClick={toggleSlideshowVisibility}
+          className={styles.startSlideshow}
+        >
+          START SLIDESHOW
+        </button>
+      )}
     </header>
   );
 }

@@ -1,6 +1,10 @@
 import styles from './gallery.module.css';
 
-function Gallery({ paintings }) {
+function Gallery({
+  toggleSlideshowVisibility,
+  toggleCurrentPainting,
+  paintings,
+}) {
   const columns = [
     [
       'Starry Night',
@@ -30,7 +34,14 @@ function Gallery({ paintings }) {
           {paintings.map(
             (painting, index) =>
               column.includes(painting.name) && (
-                <div className={styles.painting} key={index}>
+                <div
+                  onClick={() => {
+                    toggleCurrentPainting(painting);
+                    toggleSlideshowVisibility();
+                  }}
+                  className={styles.painting}
+                  key={index}
+                >
                   <div className={styles.background}></div>
                   <img
                     src={painting.images.thumbnail}

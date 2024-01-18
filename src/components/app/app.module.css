@@ -1,0 +1,22 @@
+/* .exampleContainer {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.app {
+  max-width: 90rem;
+  margin: 0 auto;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+@media screen and (max-width: 480px) {
+  .app {
+    padding: 0 1.5rem;
+  }
+}
