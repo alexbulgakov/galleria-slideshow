@@ -1,0 +1,39 @@
+.sliderControls {
+  /* position: fixed;
+  bottom: 0;
+  left: 0; */
+  margin-top: 45rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.sliderInfo,
+.sliderButtons {
+  margin-top: 2.25rem;
+}
+
+.sliderNextButton {
+  background-image: url('src/assets/button-right.svg');
+  width: 1.6rem;
+  height: 1.5rem;
+  background-size: cover;
+}
+
+.sliderPrevButton {
+  background-image: url('src/assets/button-left.svg');
+  width: 1.6rem;
+  height: 1.5rem;
+  background-size: cover;
+  margin-right: 3rem;
+}
+
+.sliderNextButton:hover {
+  background-image: url('src/assets/button-right_hover.svg');
+}
+
+.sliderPrevButton:hover {
+  background-image: url('src/assets/button-left_hover.svg');
+}
