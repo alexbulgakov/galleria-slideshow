@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { data } from 'src/utils/data';
+import { data } from 'src/assets/data/data';
 
 import Slideshow from '../slideshow/slideshow';
 import Gallery from '../gallery/gallery';

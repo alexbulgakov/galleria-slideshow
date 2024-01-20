@@ -1,12 +1,3 @@
-/* .exampleContainer {
-  width: 100vw;
-  height: 100vh;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
 .app {
   max-width: 90rem;
   margin: 0 auto;

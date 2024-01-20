@@ -3,7 +3,11 @@ import styles from './header.module.css';
 function Header({ toggleSlideshowVisibility, slideshowVisibility }) {
   return (
     <header className={styles.header}>
-      <img src="src/assets/logo.svg" className={styles.logo} alt="logo" />
+      <img
+        src="src/assets/shared/logo.svg"
+        className={styles.logo}
+        alt="logo"
+      />
       {slideshowVisibility ? (
         <button
           onClick={toggleSlideshowVisibility}

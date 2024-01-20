@@ -1,12 +1,10 @@
 .painting {
   display: grid;
-  /* grid-template-columns: 51rem auto; */
-  grid-template-columns: 51rem 31rem;
-  grid-gap: 1.81rem;
-  /* max-width: 85rem; */
+  grid-template-columns: 51rem auto;
+  grid-gap: 4.81rem;
 }
 
-.images {
+.imageAndArtist {
   position: relative;
 }
 
@@ -38,12 +36,12 @@
   margin-left: 1.87rem;
 }
 
-.about {
+.aboutPainting {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  /* width: fit-content; */
+  width: max-content;
 }
 
 .history {

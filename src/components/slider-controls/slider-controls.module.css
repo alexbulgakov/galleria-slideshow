@@ -1,7 +1,4 @@
 .sliderControls {
-  /* position: fixed;
-  bottom: 0;
-  left: 0; */
   margin-top: 45rem;
   display: flex;
   justify-content: space-between;
@@ -15,15 +12,19 @@
   margin-top: 2.25rem;
 }
 
+.artist {
+  margin-top: 0.5rem;
+}
+
 .sliderNextButton {
-  background-image: url('src/assets/button-right.svg');
+  background-image: url('src/assets/shared/button-right.svg');
   width: 1.6rem;
   height: 1.5rem;
   background-size: cover;
 }
 
 .sliderPrevButton {
-  background-image: url('src/assets/button-left.svg');
+  background-image: url('src/assets/shared/button-left.svg');
   width: 1.6rem;
   height: 1.5rem;
   background-size: cover;
@@ -31,9 +32,9 @@
 }
 
 .sliderNextButton:hover {
-  background-image: url('src/assets/button-right_hover.svg');
+  background-image: url('src/assets/shared/button-right_hover.svg');
 }
 
 .sliderPrevButton:hover {
-  background-image: url('src/assets/button-left_hover.svg');
+  background-image: url('src/assets/shared/button-left_hover.svg');
 }

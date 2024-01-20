@@ -1,27 +1,47 @@
+import { useEffect } from 'react';
 import { useState } from 'react';
+
+import { wrap } from 'popmotion';
 
 import SliderControls from '../slider-controls/slider-controls';
 import Slider from '../slider/slider';
 
-import styles from './slideshow.module.css';
-
 function Slideshow({ currentPainting, paintings }) {
   const [[page, direction], setPage] = useState([0, 0]);
+
+  useEffect(() => {
+    if (Object.keys(currentPainting).length !== 0) {
+      const currentIndex = paintings.findIndex(
+        (el) => el.name === currentPainting.name,
+      );
+
+      setPage([currentIndex, 1]);
+    }
+
+    return () => {
+      setPage([0, 0]);
+    };
+  }, [currentPainting, paintings, setPage]);
 
   const paginate = (newDirection) => {
     setPage([page + newDirection, newDirection]);
   };
 
+  const imageIndex = wrap(0, paintings.length, page);
+
   return (
     <>
       <Slider
-        currentPainting={currentPainting}
+        imageIndex={imageIndex}
         paintings={paintings}
         direction={direction}
-        setPage={setPage}
+        paginate={paginate}
         page={page}
       />
-      <SliderControls paginate={paginate} />
+      <SliderControls
+        currentPainting={paintings[imageIndex]}
+        paginate={paginate}
+      />
     </>
   );
 }

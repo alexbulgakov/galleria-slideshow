@@ -3,7 +3,7 @@ import styles from './painting.module.css';
 function Painting({ painting }) {
   return (
     <div className={styles.painting}>
-      <section className={styles.images}>
+      <section className={styles.imageAndArtist}>
         <img
           src={painting.images.hero.large}
           className={styles.image}
@@ -19,7 +19,7 @@ function Painting({ painting }) {
           alt={painting.artist.name}
         />
       </section>
-      <section className={styles.about}>
+      <section className={styles.aboutPainting}>
         <article className={styles.history}>
           <p className={styles.year}>{painting.year}</p>
           <p className={styles.description}>{painting.description}</p>

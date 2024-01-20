@@ -1,11 +1,11 @@
 import styles from './slider-controls.module.css';
 
-function SliderControls({ paginate }) {
+function SliderControls({ currentPainting, paginate }) {
   return (
     <div className={styles.sliderControls}>
       <div className={styles.sliderInfo}>
-        <h3>Name</h3>
-        <p>author</p>
+        <h3>{currentPainting.name}</h3>
+        <p className={styles.artist}>{currentPainting.artist.name}</p>
       </div>
       <div className={styles.sliderButtons}>
         <button
