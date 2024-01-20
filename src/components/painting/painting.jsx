@@ -1,6 +1,12 @@
+import { useState } from 'react';
+
+import Image from '../image/image';
+
 import styles from './painting.module.css';
 
 function Painting({ painting }) {
+  const [isOpen, setOpen] = useState(false);
+
   return (
     <div className={styles.painting}>
       <section className={styles.imageAndArtist}>
@@ -9,6 +15,13 @@ function Painting({ painting }) {
           className={styles.image}
           alt={painting.name}
         />
+        <button
+          className={styles.viewImageButton}
+          onClick={() => setOpen(true)}
+        >
+          <img src="src/assets/shared/view.svg" alt="view image" />
+          <p className={styles.view}>VIEW IMAGE</p>
+        </button>
         <div className={styles.nameAndArtist}>
           <h1 className={styles.name}>{painting.name}</h1>
           <p className={styles.artist}>{painting.artist.name}</p>
@@ -33,6 +46,7 @@ function Painting({ painting }) {
           GO TO SOURCE
         </a>
       </section>
+      {isOpen && <Image painting={painting} setOpen={setOpen} />}
     </div>
   );
 }

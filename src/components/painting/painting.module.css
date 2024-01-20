@@ -2,6 +2,7 @@
   display: grid;
   grid-template-columns: 51rem auto;
   grid-gap: 4.81rem;
+  position: relative;
 }
 
 .imageAndArtist {
@@ -11,6 +12,32 @@
 .image {
   max-height: 35rem;
   margin-bottom: 4rem;
+}
+
+.viewImageButton {
+  position: absolute;
+  left: 1rem;
+  bottom: 5rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0.87rem;
+}
+
+.view {
+  color: #fff;
+  font-size: 0.625rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.13394rem;
+  margin-left: 0.88rem;
+}
+
+.viewImageButton:hover {
+  background-color: rgba(255, 255, 255, 0.25);
 }
 
 .nameAndArtist {
