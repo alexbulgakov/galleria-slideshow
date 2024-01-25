@@ -22,7 +22,6 @@ function Image({ painting, setOpen }) {
   };
 
   const modalRoot = document.getElementById('react-modals');
-
   return ReactDOM.createPortal(
     <>
       <motion.div
@@ -34,16 +33,21 @@ function Image({ painting, setOpen }) {
         initial="hidden"
         exit="hidden"
       />
-      <motion.img
-        src={painting.images.gallery}
+
+      <motion.div
+        className={styles.imageContainer}
         variants={imageVariants}
-        className={styles.image}
         transition={transition}
-        alt={painting.name}
         animate="visible"
         initial="hidden"
         exit="hidden"
-      />
+      >
+        <button className={styles.closeButton} onClick={() => setOpen(false)}>
+          CLOSE
+        </button>
+
+        <img src={painting.images.gallery} alt={painting.name} />
+      </motion.div>
     </>,
     modalRoot,
   );
