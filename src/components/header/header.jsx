@@ -1,6 +1,15 @@
 import styles from './header.module.css';
 
-function Header({ toggleSlideshowVisibility, slideshowVisibility }) {
+function Header({
+  toggleSlideshowVisibility,
+  slideshowVisibility,
+  setCurrentPainting,
+}) {
+  function onClose() {
+    setCurrentPainting({});
+    toggleSlideshowVisibility();
+  }
+
   return (
     <header className={styles.header}>
       <img
@@ -16,10 +25,7 @@ function Header({ toggleSlideshowVisibility, slideshowVisibility }) {
           STOP SLIDESHOW
         </button>
       ) : (
-        <button
-          onClick={toggleSlideshowVisibility}
-          className={styles.startSlideshow}
-        >
+        <button className={styles.startSlideshow} onClick={onClose}>
           START SLIDESHOW
         </button>
       )}

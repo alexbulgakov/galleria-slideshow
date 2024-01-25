@@ -16,22 +16,19 @@ function App() {
     setSlideshowVisibility(!slideshowVisibility);
   }
 
-  function toggleCurrentPainting(painting) {
-    setCurrentPainting(painting);
-  }
-
   return (
     <div className={styles.app}>
       <Header
         toggleSlideshowVisibility={toggleSlideShow}
         slideshowVisibility={slideshowVisibility}
+        setCurrentPainting={setCurrentPainting}
       />
       {slideshowVisibility ? (
         <Slideshow currentPainting={currentPainting} paintings={data} />
       ) : (
         <Gallery
-          toggleCurrentPainting={toggleCurrentPainting}
           toggleSlideshowVisibility={toggleSlideShow}
+          setCurrentPainting={setCurrentPainting}
           paintings={data}
         />
       )}

@@ -2,11 +2,7 @@ import { columns } from 'src/assets/data/constants';
 
 import styles from './gallery.module.css';
 
-function Gallery({
-  toggleSlideshowVisibility,
-  toggleCurrentPainting,
-  paintings,
-}) {
+function Gallery({ toggleSlideshowVisibility, setCurrentPainting, paintings }) {
   return (
     <main className={styles.gallery}>
       {columns.map((column, colIndex) => (
@@ -16,7 +12,7 @@ function Gallery({
               column.includes(painting.name) && (
                 <div
                   onClick={() => {
-                    toggleCurrentPainting(painting);
+                    setCurrentPainting(painting);
                     toggleSlideshowVisibility();
                   }}
                   className={styles.painting}
