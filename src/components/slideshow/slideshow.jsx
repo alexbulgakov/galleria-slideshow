@@ -63,6 +63,8 @@ function Slideshow({ currentPainting, paintings }) {
       )}
       <SliderControls
         currentPainting={paintings[imageIndex]}
+        currentIndex={imageIndex}
+        total={paintings.length}
         paginate={paginate}
       />
     </>
