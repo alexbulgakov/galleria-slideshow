@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import { data } from 'src/assets/data/data';
+import { motion } from 'framer-motion';
 
 import Slideshow from '../slideshow/slideshow';
 import Gallery from '../gallery/gallery';
@@ -16,6 +17,12 @@ function App() {
     setSlideshowVisibility(!slideshowVisibility);
   }
 
+  const variants = {
+    center: { opacity: 1 },
+    enter: { opacity: 0 },
+    exit: { opacity: 0 },
+  };
+
   return (
     <div className={styles.app}>
       <Header
@@ -23,14 +30,24 @@ function App() {
         slideshowVisibility={slideshowVisibility}
         setCurrentPainting={setCurrentPainting}
       />
+
       {slideshowVisibility ? (
         <Slideshow currentPainting={currentPainting} paintings={data} />
       ) : (
-        <Gallery
-          toggleSlideshowVisibility={toggleSlideShow}
-          setCurrentPainting={setCurrentPainting}
-          paintings={data}
-        />
+        <motion.div
+          key={slideshowVisibility ? 'slideshow' : 'gallery'}
+          transition={{ duration: 0.5 }}
+          variants={variants}
+          animate="center"
+          initial="enter"
+          exit="exit"
+        >
+          <Gallery
+            toggleSlideshowVisibility={toggleSlideShow}
+            setCurrentPainting={setCurrentPainting}
+            paintings={data}
+          />
+        </motion.div>
       )}
     </div>
   );
